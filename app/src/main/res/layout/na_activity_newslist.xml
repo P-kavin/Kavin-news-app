@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cl_news_list_activity"
     android:background="@color/shadedWhite"
-    tools:context=".NewslistActiviy.NANewsListActivity">
+    tools:context=".NewslistActiviy.NANewsListActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_tool_bar"
