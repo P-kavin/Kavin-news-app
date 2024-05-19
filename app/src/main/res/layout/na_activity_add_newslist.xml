@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_list_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_10"
+    android:backgroundTint="@color/milkyWhite"
+    android:background="@drawable/ic_rounded_edge_background">
+<ImageView
+    android:id="@+id/iv_news_image"
+    android:layout_width="@dimen/spacing_100"
+    android:layout_height="@dimen/spacing_70"
+    android:layout_marginTop="@dimen/spacing_7"
+    android:layout_marginBottom="@dimen/spacing_7"
+    android:layout_marginEnd="@dimen/spacing_8"
+    app:layout_constraintEnd_toEndOf="@id/cl_list_view"
+    app:layout_constraintTop_toTopOf="@id/cl_list_view"
+    app:layout_constraintBottom_toBottomOf="@id/cl_list_view" />
+
+    <TextView
+        android:id="@+id/tv_short_news"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:layout_marginTop="@dimen/spacing_12"
+        android:layout_marginEnd="@dimen/spacing_10"
+        android:text="Apple is raising App Store prices across Europe and Asia"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_15"
+        app:layout_constraintStart_toStartOf="@id/cl_list_view"
+        app:layout_constraintEnd_toStartOf="@id/iv_news_image"
+        app:layout_constraintTop_toTopOf="@id/cl_list_view" />
+    <TextView
+        android:id="@+id/tv_published_at"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="@dimen/spacing_12"
+        android:layout_marginTop="@dimen/spacing_1"
+        android:text="Published at Oct 5th"
+        android:textColor="@color/liteShadedGrey"
+        android:textSize="@dimen/size_10"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:layout_marginBottom="@dimen/spacing_15"
+        app:layout_constraintStart_toStartOf="@id/cl_list_view"
+        app:layout_constraintEnd_toStartOf="@id/iv_news_image"
+        app:layout_constraintTop_toBottomOf="@id/tv_short_news"
+        app:layout_constraintBottom_toBottomOf="@id/cl_list_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

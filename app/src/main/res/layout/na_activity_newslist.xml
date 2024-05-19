@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_news_list_activity"
+    android:background="@color/shadedWhite"
+    tools:context=".NewslistActiviy.NANewsListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_tool_bar"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="@dimen/spacing_40"
+        android:background="@color/shadedWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <TextView
+        android:id="@+id/tv_daily_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_22"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:text="@string/daily_feed"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_tool_bar" />
+
+    <ImageView
+        android:id="@+id/iv_filter_list"
+        android:layout_width="@dimen/spacing_24"
+        android:layout_height="@dimen/spacing_22"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:layout_marginEnd="@dimen/spacing_50"
+        android:background="@drawable/filter"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_right"
+        app:layout_constraintTop_toBottomOf="@id/tb_tool_bar" />
+
+    <ImageView
+        android:id="@+id/iv_ascending_list"
+        android:layout_width="@dimen/spacing_22"
+        android:layout_height="@dimen/spacing_22"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:layout_marginEnd="@dimen/spacing_20"
+        android:background="@drawable/sortlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_tool_bar" />
+
+    <ImageView
+        android:id="@+id/iv_descending_list"
+        android:layout_width="@dimen/spacing_22"
+        android:layout_height="@dimen/spacing_22"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:layout_marginEnd="@dimen/spacing_20"
+        android:background="@drawable/ascending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_tool_bar" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/et_search_news"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="@dimen/spacing_44"
+        android:layout_marginTop="@dimen/spacing_16"
+        android:background="@drawable/ic_rounded_edge_background"
+        android:hint="@string/search_news"
+        android:textColor="@color/littleGrey"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_right"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_left"
+        app:layout_constraintTop_toBottomOf="@id/tv_daily_feed" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sl_pull_to_refresh"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="@dimen/spacing_0"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_right"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_left"
+        app:layout_constraintTop_toBottomOf="@id/et_search_news">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_news_list"
+            android:layout_width="@dimen/spacing_0"
+            android:layout_height="@dimen/spacing_0"
+            android:layout_marginTop="@dimen/spacing_18"
+            app:layout_constraintBottom_toBottomOf="@id/gl_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/gl_vertical_right"
+            app:layout_constraintStart_toEndOf="@id/gl_vertical_left"
+            app:layout_constraintTop_toBottomOf="@id/et_search_news" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_home_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/littleGrey"
+        android:textSize="@dimen/size_22"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/gl_vertical_right"
+        app:layout_constraintStart_toEndOf="@id/gl_vertical_left"
+        app:layout_constraintTop_toBottomOf="@id/et_search_news" />
+
+    <ProgressBar
+        android:id="@+id/pb_Pagination"
+        style="?attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_network_banner"
+        android:layout_width="@dimen/spacing_0"
+        android:layout_height="@dimen/spacing_20"
+        android:background="@drawable/ic_network_banner"
+        android:text="@string/badNetwork"
+        android:textAlignment="center"
+        android:textColor="@color/milkyWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

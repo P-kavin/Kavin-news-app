@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="daily_feed">Daily Feed</string>
+    <string name="search_news">Search News</string>
+    <string name="badNetwork">Network Disconnected</string>
+    <string name="goodNetwork">Network Connected</string>
+    <string-array name="Topics">
+    <item>Economy</item>
+    <item>Science</item>
+    <item>Space</item>
+    <item>Sports</item>
+    <item>History</item>
+    </string-array>
+    <string name="publishedAt">Published at</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Info">No News Available</string>
+</resources>
